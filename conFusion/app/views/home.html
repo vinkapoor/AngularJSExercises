@@ -5,9 +5,12 @@
             <h3 align=center>Our Lipsmacking Culinary Creations</h3>
         </div>
         <div class="col-xs-12 col-sm-9 col-sm-pull-3">
-            <div class="media">
+            <div ng-if="!showDish">
+                <h3>{{message}}</h3>
+            </div>
+            <div class="media" ng-if="showDish">
                 <div class="media-left">
-                    <a ui-sref="app.dishdetails({id: featuredDish._id})">
+                    <a ui-sref="app.dishdetails({id: featuredDish.id})">
                         <img class="media-object" src={{featuredDish.image}} alt="Uthapizza">
                     </a>
                 </div>
@@ -30,9 +33,12 @@
             <h3 align=center>This Month's Promotions</h3>
         </div>
         <div class="col-xs-12 col-sm-9">
-            <div class="media">
+            <div ng-if="!showPromotion">
+                <h3>{{messagePro}}</h3>
+            </div>
+            <div class="media" ng-if="showPromotion">
                 <div class="media-right">
-                    <a ui-sref="app.dishdetails({id: promotions._id})">
+                    <a ui-sref="app.dishdetails({id: promotions.id})">
                         <img class="media-object" src={{promotions.image}} alt="Uthapizza">
                     </a>
                 </div>
@@ -54,7 +60,10 @@
             <h3 align=center>Meet our Culinary Specialists</h3>
         </div>
         <div class="col-xs-12 col-sm-9 col-sm-pull-3">
-            <div class="media">
+            <div ng-if="!showLeader">
+                <h3>{{messageLeader}}</h3>
+            </div>
+            <div class="media" ng-if="showLeader">
                 <div class="media-left">
                     <img class="media-object" src={{leader.image}}>
                 </div>
